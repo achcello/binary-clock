@@ -1,11 +1,13 @@
-from flask import Flask, redirect, url_for, request
+from flask import Flask
 from datetime import datetime
 app = Flask(__name__)
 
+
 @app.route('/getTime')
 def idk():
-   print('sending the time:', getTime())
-   return(getTime())
+    print('sending the time:', getTime())
+    return(getTime())
+
 
 def getTime():
     fullTime = str(datetime.now().time())
@@ -15,5 +17,6 @@ def getTime():
     minutes = fullTime.split(':')[1]
     return hours + minutes
 
+
 if __name__ == '__main__':
-   app.run(debug = True)
+    app.run(debug=True)
